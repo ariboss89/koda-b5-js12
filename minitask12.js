@@ -38,8 +38,9 @@ async function processUserData(data) {
     let nama = data[a].name.toLowerCase();
     let city = data[a].address["city"];
 
-    const obj = {email:email,
+    const obj = {
       name:nama,
+      email:email,
       city:city
     }
 
@@ -66,7 +67,6 @@ function checkString(data){
         hasil += String.fromCharCode(res);
       }
     }
-
     return hasil;
 }
 
@@ -77,14 +77,12 @@ async function toLowerCase(data) {
     let nama = data[a].name;
     let city = data[a].address["city"];
 
-    const user = {name:checkString(theEmail),
+    const user = {name:checkString(nama),
       email:checkString(theEmail),
       city:checkString(city)
     }
-
     arrUser2.push(user);
   }
-
   console.log(arrUser2);
 }
 
